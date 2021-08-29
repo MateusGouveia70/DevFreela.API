@@ -2,7 +2,7 @@
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Core.Entities;
-using DevFreela.Infrastructure.Persistence.DevFreelaDbContext;
+using DevFreela.Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
