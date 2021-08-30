@@ -50,9 +50,10 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProject([FromBody] UpdateProjectInputModel inputModel)
+        public IActionResult UpdateProject(int id, [FromBody] UpdateProjectInputModel inputModel)
         {
-            _projectService.UpdateProject(inputModel);
+            _projectService.UpdateProject(id, inputModel);
+
             return NoContent();
         }
 
@@ -67,6 +68,7 @@ namespace DevFreela.API.Controllers
             }
 
             _projectService.DeleteProject(id);
+
             return NoContent();
         }
 

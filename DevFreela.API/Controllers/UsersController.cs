@@ -37,6 +37,7 @@ namespace DevFreela.API.Controllers
         {
             // validacao
             var id = _userService.CreateUser(inputModel);
+            
 
             return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
         }
