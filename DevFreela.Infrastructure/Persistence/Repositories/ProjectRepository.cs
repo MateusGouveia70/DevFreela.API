@@ -14,7 +14,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class ProjectRepository : IProjectRepository
     {
-        private readonly DevFreelaDbContext _dbContext;
+        private readonly DevFreelaDbContext _dbContext; 
         private readonly string _connectionString;
 
         public ProjectRepository(DevFreelaDbContext dbContext, IConfiguration configuration)
@@ -38,6 +38,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         public async Task<List<Project>> GetAllProjectsAsync()
         {
             return await _dbContext.Projects.ToListAsync();
+        }
+
+        public async Task<Project> GetByIdAsync(int id)
+        {
+            return await _dbContext.Projects.SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<Project> GetDetailsByIdAsync(int id)
