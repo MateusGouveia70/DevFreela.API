@@ -33,7 +33,7 @@ namespace DevFreela.Application.Services.Implementations
                 .ToList();
 
             return projects;
-
+            
         }
 
         public ProjectDetailsViewModel GetById(int id)
